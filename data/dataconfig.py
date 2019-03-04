@@ -57,6 +57,9 @@ class row_id:
     #获取实际结果
     def get_result(self):
         return row_id.result
+    #获取请求数据
+    def get_requestdata(self):
+        return row_id.request_data
 
 if __name__ == '__main__':
     getrows=row_id()
