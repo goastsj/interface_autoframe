@@ -9,7 +9,7 @@ class operation_excel:
             self.filename=filename
             self.indexs=indexs
         else:
-            self.filename="D:\学习资料\接口自动化\接口自动化-视频\interfaceauto\interface_autoframe\dataconfig\case1.xls"
+            self.filename=r"../dataconfig/case1.xls"
             self.indexs=0
         self.sheet_data=self.get_data()
     #获取表格数据

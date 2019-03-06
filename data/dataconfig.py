@@ -1,4 +1,5 @@
 #coding utf-8
+from util.operation_excel import operation_excel
 class row_id:
     #d定义列头顺序，获取列头位置
     id=0
@@ -13,13 +14,16 @@ class row_id:
     request_data=9
     expect_result=10
     result=11
-
+    #def __init__(self):
+        #self.excel_data=operation_excel()
     #获取用例id
     def get_id(self):
+        #id_value=self.excel_data.get_cellvalus(rows,row_id.id)
         return row_id.id
 
     #获取用例名称
     def get_name(self):
+
         return row_id.name
 
     #获取请求地址
@@ -49,6 +53,9 @@ class row_id:
     #获取数据依赖字段
     def get_datarespond(self):
         return row_id.data_depend
+    #获取请求数据
+    def get_request(self):
+        return row_id.request_data
 
     #获取期望结果字段
     def get_expectrespond(self):
@@ -60,7 +67,7 @@ class row_id:
 
 if __name__ == '__main__':
     getrows=row_id()
-    a=getrows.get_id()
+    a=getrows.get_id(2)
     print(a)
 
 
