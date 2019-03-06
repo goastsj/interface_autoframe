@@ -43,6 +43,9 @@ class operation_excel:
         table=wb.get_sheet(0)
         table.write(rows,cols,values)
         wb.save(self.filename)
+    #由单元格数据获取所在的行数
+    def row_num(self):
+        
 
 if __name__ == '__main__':
     operation_excel=operation_excel()
