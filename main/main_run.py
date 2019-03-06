@@ -17,19 +17,23 @@ class main_run:
         r_he=self.dataconfigs.get_header()
         r_da=self.dataconfigs.get_requestdata()
         r_url=self.dataconfigs.get_url()
+        r_isrun=self.dataconfigs.get_isrun()
         #获取表格行数
         col_len=self.excel_data.get_colcount()
+        res=None
         #循环执行表格行数据
         for i in range(1,col_len):
             #请求地址、方法、请求头
             url=self.excel_data.get_cellvalus(i,r_url)
             methodes=self.excel_data.get_cellvalus(i,r_me)
             headerss=self.excel_data.get_cellvalus(i,r_he)
+            is_run=self.excel_data.get_cellvalus(i,r_isrun)
             headers_data=self.op_json2.get_value(headerss)
             #获取请求数据别名，并获取对应的json格式请求数据
             data=self.excel_data.get_cellvalus(i,r_da)
             data_json=self.op_json1.get_value(data)
-            res=self.methods.method_main(methodes,url,data_json,headers_data)
+            if is_run=='yes':
+                res=self.methods.method_main(methodes,url,data_json,headers_data)
             print(res)
 
 
