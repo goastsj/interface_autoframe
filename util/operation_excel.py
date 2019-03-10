@@ -44,11 +44,23 @@ class operation_excel:
         table.write(rows,cols,values)
         wb.save(self.filename)
     #由单元格数据获取所在的行数
-    def row_num(self):
+    def get_row_num(self,case_id,col):
+        cols_data=self.get_cols(col)
+        i=0
+        rows_num=self.get_rowcount()
+        #print(cols_data)
+        for i in range(rows_num):
+            if case_id==cols_data[i]:
+                return i
+            else:
+                i=i+1
+
         
 
 if __name__ == '__main__':
     operation_excel=operation_excel()
     #operation_excel.get_data()
     #operation_excel.get_cellvalus(1,2)
-    operation_excel.cell_write(5,6,"ceshi")
+    #operation_excel.cell_write(5,6,"ceshi")
+    res=operation_excel.get_row_num('Imooc-11',0)
+    print(res)
